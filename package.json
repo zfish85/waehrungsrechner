@@ -1,0 +1,22 @@
+{
+  "name": "waehrungsrechner",
+  "version": "1.0.0",
+  "description": "This PWA allows users to convert amounts from Argentine Pesos into Euros in real-time using different exchange rates. Users manually input the exchange rates to perform the conversions. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zfish85/waehrungsrechner.git"
+  },
+  "author": "Martin Heisler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zfish85/waehrungsrechner/issues"
+  },
+  "homepage": "https://github.com/zfish85/waehrungsrechner#readme",
+  "dependencies": {
+    "onsenui": "^2.12.8"
+  }
+}

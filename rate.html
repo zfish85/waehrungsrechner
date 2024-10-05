@@ -1,0 +1,162 @@
+<ons-page id="rate">
+
+    <script>
+        function restrictToInteger(event) {
+            // Liste erlaubter Tasten (Steuerzeichen) z.B. Backspace, Pfeiltasten usw.
+            const allowedKeys = ["Backspace", "ArrowLeft", "ArrowRight", "Tab"];
+
+            // Überprüfen, ob die Taste eine Zahl (0-9) oder eine erlaubte Steuerungstaste ist
+            if (
+                !allowedKeys.includes(event.key) && // Erlaubte Steuerzeichen
+                !(event.key >= "0" && event.key <= "9") // Zahlen 0-9
+            ) {
+                event.preventDefault(); // Blockiert alle anderen Eingaben
+            }
+        }
+
+    </script>
+
+    <style>
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%; /* Nimmt die volle Höhe des Containers ein */
+        }
+
+        .container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5em;
+            margin: 0.5em;
+
+
+        }
+
+        .item {
+            padding: 0.5em;
+            background-color: white;
+            border-radius: 0.25em;
+            display: flex;
+            flex-grow: 1;
+            flex-direction: column;
+            justify-content: center;
+
+
+        }
+
+        .item-title {
+
+            margin-bottom: 0.7em;
+
+        }
+
+        .item-input {
+
+            text-align: right;
+
+
+        }
+
+        .save-button {
+            margin: 0.5em 0.5em 1em 0.5em;
+
+        }
+
+        label {
+            font-size: 1.4em;
+
+        }
+
+        input {
+            font-size: 1.4em;
+
+            padding: 2px;
+
+
+        }
+
+        /* Für Chrome, Safari, Edge, Opera */
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Für Firefox */
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+
+    </style>
+
+    <div class="content">
+
+        <div class="container">
+
+
+            <div class="item">
+                <div class="item-title">
+                    <h2>Offiziell (Euro)</h2>
+                </div>
+
+                <div class="item-input">
+                    <label for="officialEuro">1 € = </label>
+                    <input type="number" id="officialEuro" name="integerInput" maxlength="10" size="10" onkeydown="restrictToInteger(event)"/>
+                    <label for="officialEuro">ARS</label>
+                </div>
+
+            </div>
+
+            <div class="item">
+                <div class="item-title">
+                    <h2>Karte</h2>
+                </div>
+
+                <div class="item-input">
+                    <label for="creditCard">1 € = </label>
+                    <input type="number" id="creditCard" name="integerInput" maxlength="10" size="10"/>
+                    <label for="creditCard">ARS</label>
+                </div>
+
+            </div>
+
+            <div class="item">
+                <div class="item-title">
+                    <h2>Straße</h2>
+                </div>
+
+                <div class="item-input">
+                    <label for="street">1 € = </label>
+                    <input type="number" id="street" name="integerInput" maxlength="10" size="10"/>
+                    <label for="street">ARS</label>
+                </div>
+
+            </div>
+
+            <div class="item">
+                <div class="item-title">
+                    <h2>Offiziell (Dollar)</h2>
+                </div>
+
+                <div class="item-input">
+                    <label for="officialDollar">1 $ = </label>
+                    <input type="number" id="officialDollar" name="integerInput" maxlength="10" size="10"/>
+                    <label for="officialDollar">ARS</label>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <ons-button class="save-button">Save</ons-button>
+
+
+    </div>
+
+
+</ons-page>

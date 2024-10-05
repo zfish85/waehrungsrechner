@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Währungsrechner</title>
+
+    <!-- Onsen UI CSS -->
+    <link rel="stylesheet" href="./node_modules/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="./node_modules/onsenui/css/onsen-css-components.min.css">
+
+
+    <!-- Onsen UI JavaScript -->
+    <script src="./node_modules/onsenui/js/onsenui.min.js"></script>
+
+
+    <script>
+
+        const loadPage = (page) => {
+            document.querySelector('#navigator').bringPageTop(page, {animation: 'fade'});
+        };
+
+
+    </script>
+
+
+</head>
+<body>
+
+<!-- Onsen UI Struktur -->
+
+<ons-navigator id="navigator" page="main.html"></ons-navigator>
+
+<template id="main.html">
+    <ons-page>
+
+        <ons-toolbar id="home-toolbar">
+            <div class="center">
+
+                Währungsrechner
+
+            </div>
+        </ons-toolbar>
+
+        <ons-tabbar id="tabbar" position="top">
+            <ons-tab label="Pesos" page="pesos.html" active></ons-tab>
+            <ons-tab label="Dollar" page="dollar.html" ></ons-tab>
+            <ons-tab label="Kurs" page="rate.html" ></ons-tab>
+
+        </ons-tabbar>
+
+
+        <!-- Bottom Toolbar für den Footer -->
+        <ons-bottom-toolbar id="bottom-toolbar">
+            <div class="bottom-bar__line-height" style="text-align: center;">
+                <button class="toolbar-button" onclick="loadPage('legal.html')">Rechtliches</button>
+            </div>
+        </ons-bottom-toolbar>
+
+
+    </ons-page>
+</template>
+
+
+
+
+
+
+</body>
+</html>
