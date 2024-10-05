@@ -18,7 +18,7 @@ function restrictToInteger(event) {
 document.addEventListener('init', function () {
     document.querySelector(".legal-button").onclick = () => loadPage('legal.html');
     document.querySelectorAll(".integer-only").forEach((element) => {
-        element.addEventListener('keyup', restrictToInteger);
+        element.addEventListener('keydown', restrictToInteger);
     });
 
 });
