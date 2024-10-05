@@ -38,6 +38,13 @@
 
 .item-input {
     text-align: right;
+    white-space: nowrap;
+
+}
+
+
+.item-input label, .item-input input {
+    display: inline-block;
 }
 
 .save-button {
