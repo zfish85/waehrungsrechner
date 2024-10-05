@@ -93,7 +93,9 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
+
+# Commented out as it's intended for publication
+#dist
 
 # Gatsby files
 .cache/
@@ -281,4 +283,4 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,webstorm,node
-/legal.html
+

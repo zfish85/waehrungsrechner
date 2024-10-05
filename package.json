@@ -4,7 +4,8 @@
   "description": "This PWA allows users to convert amounts from Argentine Pesos into Euros in real-time using different exchange rates. Users manually input the exchange rates to perform the conversions. ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,11 @@
   "homepage": "https://github.com/zfish85/waehrungsrechner#readme",
   "dependencies": {
     "onsenui": "^2.12.8"
+  },
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4"
   }
 }
