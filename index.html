@@ -2,35 +2,10 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-
     <title>Währungsrechner</title>
-
-
-
-<!--    &lt;!&ndash; Onsen UI CSS &ndash;&gt;
-    <link rel="stylesheet" href="./node_modules/onsenui/css/onsenui.css">
-    <link rel="stylesheet" href="./node_modules/onsenui/css/onsen-css-components.min.css">
-
-
-    &lt;!&ndash; Onsen UI JavaScript &ndash;&gt;
-    <script src="./node_modules/onsenui/js/onsenui.min.js"></script>-->
-
-
-    <script>
-
-        const loadPage = (page) => {
-            document.querySelector('#navigator').bringPageTop(page, {animation: 'fade'});
-        };
-
-
-
-    </script>
-
-
 </head>
 <body>
 
-<!-- Onsen UI Struktur -->
 
 <ons-navigator id="navigator" page="main.html"></ons-navigator>
 
@@ -56,7 +31,7 @@
         <!-- Bottom Toolbar für den Footer -->
         <ons-bottom-toolbar id="bottom-toolbar">
             <div class="bottom-bar__line-height" style="text-align: center;">
-                <button class="toolbar-button" onclick="loadPage('legal.html')">Rechtliches</button>
+                <button class="toolbar-button legal-button" onclick="loadPage('legal.html')">Rechtliches</button>
             </div>
         </ons-bottom-toolbar>
 
