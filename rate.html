@@ -1,25 +1,6 @@
 <ons-page id="rate">
 
 
-    <script>
-
-        function restrictToInteger(event) {
-            // Liste erlaubter Tasten (Steuerzeichen) z.B. Backspace, Pfeiltasten usw.
-            const allowedKeys = ["Backspace", "ArrowLeft", "ArrowRight", "Tab"];
-
-            // Überprüfen, ob die Taste eine Zahl (0-9) oder eine erlaubte Steuerungstaste ist
-            if (
-                !allowedKeys.includes(event.key) && // Erlaubte Steuerzeichen
-                !(event.key >= "0" && event.key <= "9") // Zahlen 0-9
-            ) {
-                event.preventDefault(); // Blockiert alle anderen Eingaben
-            }
-        }
-
-
-
-
-    </script>
 
     <div class="content">
 
