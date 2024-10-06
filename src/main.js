@@ -10,12 +10,58 @@ function restrictToInteger(inputElement) {
     }
 }
 
-document.addEventListener('init', function () {
+const  rates = ["officialEuro", "creditCard", "street", "transfer", "officialDollar"];
+
+function saveRates() {
+    rates.forEach(saveRate);
+}
+
+function saveRate(rate) {
+    let value = document.getElementById(rate).value;
+    if(value && value > 0) {
+        localStorage.setItem(rate,value);
+    } else {
+        localStorage.removeItem(rate);
+        document.getElementById(rate).value = "";
+
+    }
+}
+
+function setRates(){
+    rates.forEach(setRate)
+}
+
+function setRate(rate){
+    let value = localStorage.getItem(rate);
+    if(value && value > 0){
+        document.getElementById(rate).value = value;
+    }
+
+}
+
+
+
+
+
+document.addEventListener('init', function (event) {
     document.querySelector(".legal-button").onclick = () => loadPage('legal.html');
+    document.querySelector('ons-tabbar').addEventListener('prechange', setRates)
     document.querySelectorAll(".integer-only").forEach((element) => {
         element.addEventListener('input', function () {
             restrictToInteger(this);
         });
     });
 
+    if(event.target.id == "rate"){
+        document.querySelector(".save-button").onclick = saveRates;
+
+    }
+
 });
+
+
+
+
+
+
+
