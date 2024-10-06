@@ -58,6 +58,7 @@ label {
 input {
     font-size: 1.4em;
     padding: 2px;
+    width:  10ch;
 }
 
 /* Chrome, Safari, Edge, Opera */
