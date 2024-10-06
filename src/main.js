@@ -2,23 +2,20 @@ function loadPage(page) {
     document.querySelector('#navigator').bringPageTop(page, {animation: 'fade'});
 }
 
-function restrictToInteger(event) {
-    // List of allowed keys (control characters), e.g., Backspace, arrow keys, etc."
-    const allowedKeys = ["Backspace", "ArrowLeft", "ArrowRight", "Tab"];
+function restrictToInteger(inputElement) {
+    inputElement.value = inputElement.value.replace(/[^0-9]/g, '');
 
-    // Check if the key is a number (0-9) or an allowed control key.
-    if (
-        !allowedKeys.includes(event.key) && // Allowed control key
-        !(event.key >= "0" && event.key <= "9") // Numbers 0-9
-    ) {
-        event.preventDefault(); // Block not allowed input
+    if (inputElement.value.length > 10) {
+        inputElement.value = inputElement.value.slice(0, 10);
     }
 }
 
 document.addEventListener('init', function () {
     document.querySelector(".legal-button").onclick = () => loadPage('legal.html');
     document.querySelectorAll(".integer-only").forEach((element) => {
-        element.addEventListener('keydown', restrictToInteger);
+        element.addEventListener('input', function () {
+            restrictToInteger(this);
+        });
     });
 
 });
