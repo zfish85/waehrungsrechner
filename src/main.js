@@ -6,7 +6,7 @@ const euroRates = rates.filter(rate => rate !== "officialDollar");
 
 window.addEventListener('load', () => {
     if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/waehrungsrechner/service-worker.js', { scope: '/waehrungsrechner' })
+        navigator.serviceWorker.register('/waehrungsrechner/service-worker.js', { scope: '/waehrungsrechner/' })
             .then(registration => {
                 console.log('Service Worker successfully registered with scope:', registration.scope);
             })
