@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%; /* Nimmt die volle Höhe des Containers ein */
+    height: 100%;
 }
 
 .container {
@@ -37,15 +37,43 @@
     justify-content: center;
 }
 
+.input-item {
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+
+.output-item {
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.4em;
+    align-items: center;
+}
+
+
+
+
+
 .item-title {
     margin-bottom: 0.7em;
 }
 
 .item-input {
-    text-align: right;
+    margin-right: 0.25em;
     white-space: nowrap;
-
 }
+
+.item-input-right {
+    text-align: right;
+}
+
+
+.item-input-center {
+    text-align: center;
+}
+
+
 
 
 .item-input label, .item-input input {
@@ -64,6 +92,7 @@ input {
     font-size: 1.4em;
     padding: 2px;
     width:  10ch;
+    margin-right: 0.25em;
 }
 
 /* Chrome, Safari, Edge, Opera */

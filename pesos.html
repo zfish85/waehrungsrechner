@@ -1,4 +1,193 @@
 <ons-page id="pesos">
 
 
+    <script>
+
+        /*const euroRates = ["officialEuro", "creditCard", "street", "transfer"];
+
+        document.addEventListener("init", (event) => {
+            if (event.target.id === "pesos") {
+                document.querySelector("#inputPesos").addEventListener("input", (event) => {
+                    calculateExchanges(event.target.value, "pesos");
+                });
+            }
+
+            if (event.target.id === "dollar") {
+                document.querySelector("#inputDollar").addEventListener("input", (event) => {
+                    let pesos = calculatePesos(event.target.value);
+                    if(pesos){
+                        writeResult(pesos, "dollar", "officialDollar", "ARS", 0)
+                        calculateExchanges(pesos, "dollar")
+                    }
+
+                });
+            }
+
+        });
+
+        function calculateDollarExchange(amount){
+            let pesos = calculatePesos(amount);
+            if(!pesos){
+
+                writeResult(pesos, "dollar", "officialDollar", "ARS", 0);
+                calculateExchanges(pesos, "dollar");
+
+            }
+
+
+
+        }
+
+
+
+        function calculatePesos(amount) {
+
+            if (!isValidNumber(amount)) {
+                amount = null;
+            }
+
+            const exchangeRate = localStorage.getItem("officialDollar");
+
+            if (!exchangeRate) {
+                writeNoRate("dollar", "officialDollar");
+                euroRates.forEach(rate => {
+                        writeNoRate("dollar", rate);
+                    });
+                return;
+            }
+
+            if (!amount) {
+                writeBlank("dollar", "officialDollar", "ARS");
+                euroRates.forEach(rate => {
+                    writeBlank("dollar", rate, "€");
+                });
+                return;
+            }
+
+            return parseInt(amount) * parseInt(exchangeRate);
+
+
+
+
+        }
+
+        function calculateExchanges(amount, page) {
+
+            // Check if pesos is a valid number
+            if (!isValidNumber(amount)) {
+                amount = null;
+            }
+
+            euroRates.forEach(rate => {
+                const exchangeRate = localStorage.getItem(rate);
+
+                // Early return if no exchange rate is available
+                if (!exchangeRate) {
+                    writeNoRate(page, rate);
+                    return;
+                }
+
+                // Early return if pesos input is empty or invalid
+                if (!amount) {
+                    writeBlank(page, rate, "€");
+                    return;
+                }
+
+                // Calculate result and display it
+                let result = calculateExchange(parseInt(amount), parseInt(exchangeRate));
+                writeResult(result, page, rate, "€", 2);
+            });
+        }
+
+        function getElement(page, rate) {
+            return document.querySelector(`.output.${page}.${rate}`);
+
+        }
+
+        function writeResult(result, page, rate, currency, decimal) {
+            const element = getElement(page, rate);
+            const output = result.toFixed(decimal).replace(".", ",");
+            element.innerHTML = `${output} ${currency}`;
+        }
+
+        function writeBlank(page, rate, currency) {
+            const element = getElement(page, rate);
+            if(currency === "ARS"){
+                element.innerHTML = `---- ${currency}`;
+                return;
+            }
+            element.innerHTML = `-.-- ${currency}`;
+        }
+
+        function writeNoRate(page, rate) {
+            const element = getElement(page, rate);
+            element.innerHTML = "Kein Kurs";
+            element.classList.add("no-rate");
+        }
+
+        function calculateExchange(amount, rate) {
+            return amount / rate;
+        }
+
+        function isValidNumber(value) {
+            if (typeof value === "string") {
+                return !isNaN(value) && value.trim() !== '';
+            } else if (typeof value === "number") {
+                return isFinite(value);
+            }
+            return false;
+        }*/
+
+    </script>
+
+    <div class="content">
+
+        <div class="container">
+
+            <div class="item">
+
+                <div class="item-input item-input-center">
+                    <input type="number" id="inputPesos" name="inputPesos" inputmode="numeric" pattern="[0-9]*"
+                           maxlength="10" class="integer-only"/>
+                    <label for="inputPesos">ARS</label>
+                </div>
+
+            </div>
+
+
+            <div class="item output-item ">
+
+                <div> Offiziell</div>
+
+                <div class="output pesos officialEuro">-.-- €</div>
+
+
+            </div>
+
+            <div class="item output-item ">
+                <div> Karte</div>
+
+                <div class="output pesos creditCard">-.-- €</div>
+
+            </div>
+
+            <div class="item output-item ">
+                <div> Straße</div>
+
+                <div class="output pesos street">-.-- €</div>
+
+            </div>
+
+            <div class="item output-item ">
+                <div> Transfer</div>
+
+                <div class="output pesos transfer">-.-- €</div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
 </ons-page>
