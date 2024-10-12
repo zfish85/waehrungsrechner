@@ -1,15 +1,15 @@
 const CACHE_NAME = 'WRA-cache-v1.0.0';
 const urlsToCache = [
-    './dollar.html',
-    './index.html',
-    './legal.html',
-    './manifest.json',
-    './pesos.html',
-    './rate.html',
-    './icons/icon-192x192.png',
-    './icons/icon-512x512.png',
-    './dist/bundle.js',
-    './dist/bundle.js.LICENSE.txt'
+    '/waehrungsrechner/dollar.html',
+    '/waehrungsrechner/index.html',
+    '/waehrungsrechner/legal.html',
+    '/waehrungsrechner/manifest.json',
+    '/waehrungsrechner/pesos.html',
+    '/waehrungsrechner/rate.html',
+    '/waehrungsrechner/icons/icon-192x192.png',
+    '/waehrungsrechner/icons/icon-512x512.png',
+    '/waehrungsrechner/dist/bundle.js',
+    '/waehrungsrechner/dist/bundle.js.LICENSE.txt'
 ];
 
 self.addEventListener('install', function(event) {
