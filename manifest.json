@@ -22,7 +22,7 @@
   "lang": "de-DE",
   "scope": "/",
   "serviceworker": {
-    "src": "/service-worker.js",
+    "src": "/waehrungsrechner/service-worker.js",
     "scope": "/",
     "type": "module"
   }
