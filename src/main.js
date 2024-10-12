@@ -2,6 +2,22 @@ const rates = ["officialEuro", "creditCard", "street", "transfer", "officialDoll
 const euroRates = rates.filter(rate => rate !== "officialDollar");
 
 
+// Service-Worker
+
+window.addEventListener('load', () => {
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+                console.log('Service Worker successfully registered with scope:', registration.scope);
+            })
+            .catch(error => {
+                console.log('Service Worker registration failed:', error);
+            });
+    }
+});
+
+
+
 // Init
 
 document.addEventListener('init', function (event) {

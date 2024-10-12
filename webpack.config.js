@@ -12,6 +12,11 @@ module.exports = {
                 test: /\.css$/,  // Lade CSS-Dateien
                 use: ['style-loader', 'css-loader'],
             },
+            {
+                test: /\.scss$/,  // Für SCSS-Dateien
+                use: ['style-loader', 'css-loader', 'sass-loader'],  // SCSS verarbeiten und einfügen
+            }
+
         ],
     },
 };
