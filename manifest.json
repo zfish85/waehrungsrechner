@@ -1,8 +1,8 @@
 {
   "name": "Waehrungsrechner",
   "short_name": "WRA",
-  "description": "Dies App dient der Umrechnung von ARS zu verschiedenen Kursen ",
-  "start_url": "/waehrungsrechner/index.html",
+  "description": "Dies App dient der Umrechnung von ARS zu verschiedenen Kursen",
+  "start_url": "/waehrungsrechner/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0000ff",
@@ -22,8 +22,8 @@
   "lang": "de-DE",
   "scope": "/waehrungsrechner/",
   "serviceworker": {
-    "src": "./service-worker.js",
-    "scope": "/",
+    "src": "/waehrungsrechner/service-worker.js",
+    "scope": "/waehrungsrechner/",
     "type": "module"
   }
 }
