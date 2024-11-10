@@ -1,6 +1,12 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,webstorm,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,webstorm,node
 
+### wahrenungsrechner ###
+# Legal information must be adapted in production
+
+legal.html
+
+
 ### Node ###
 # Logs
 logs
@@ -94,8 +100,8 @@ out
 # Nuxt.js build / generate output
 .nuxt
 
-# Commented out as it's intended for publication
-#dist
+
+dist
 
 # Gatsby files
 .cache/
